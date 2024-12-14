@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Reminder
+//  Remnder
 //
 //  Created by Josymarss on 14/12/24.
 //
