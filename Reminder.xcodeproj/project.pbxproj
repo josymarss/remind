@@ -31,6 +31,8 @@
 		3C8C01872D1273530000086E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8C01862D1273530000086E /* FirebaseDatabase */; };
 		3C8C01892D1273530000086E /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8C01882D1273530000086E /* FirebaseDatabaseSwift */; };
 		3C8C018B2D1273530000086E /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8C018A2D1273530000086E /* FirebaseDynamicLinks */; };
+		3C8C01912D127A870000086E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C8C01902D127A860000086E /* GoogleService-Info.plist */; };
+		3C8C01932D1284940000086E /* ReminderFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C01922D1284940000086E /* ReminderFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +50,8 @@
 		3C8C016D2D126B230000086E /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		3C8C016F2D126BB90000086E /* LoginBottomSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetProtocol.swift; sourceTree = "<group>"; };
 		3C8C01712D126E2F0000086E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		3C8C018E2D1276EE0000086E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C8C01902D127A860000086E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C8C01922D1284940000086E /* ReminderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +96,11 @@
 		3C3427FC2D0D4D950047C43C /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				3C8C018E2D1276EE0000086E /* GoogleService-Info.plist */,
+				3C8C01902D127A860000086E /* GoogleService-Info.plist */,
 				3C8C01552D1268D40000086E /* Source  */,
 				3C3427FD2D0D4D950047C43C /* AppDelegate.swift */,
 				3C3427FF2D0D4D950047C43C /* SceneDelegate.swift */,
+				3C8C01922D1284940000086E /* ReminderFlowController.swift */,
 				3C3428062D0D4D970047C43C /* Assets.xcassets */,
 				3C34280B2D0D4D970047C43C /* Info.plist */,
 			);
@@ -260,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C3428072D0D4D970047C43C /* Assets.xcassets in Resources */,
+				3C8C01912D127A870000086E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +284,7 @@
 				3C8C015B2D1269420000086E /* SplashViewController.swift in Sources */,
 				3C8C01622D126A4F0000086E /* LoginBottomSheetViewController.swift in Sources */,
 				3C3427FE2D0D4D950047C43C /* AppDelegate.swift in Sources */,
+				3C8C01932D1284940000086E /* ReminderFlowController.swift in Sources */,
 				3C8C016E2D126B230000086E /* Typography.swift in Sources */,
 				3C3428002D0D4D950047C43C /* SceneDelegate.swift in Sources */,
 			);

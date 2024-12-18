@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class LoginBottomSheetCongtroller: UIViewController {
+    var viewModel = LoginViewModel()
     let loginBottomSweetView = LoginBottomSheetView()
     var hanldeAreaHeight: CGFloat = 50.0
     
@@ -68,7 +69,7 @@ class LoginBottomSheetCongtroller: UIViewController {
 
 extension LoginBottomSheetCongtroller: LoginBottomSheetProtocol {
     func authUser(email: String, password: String) {
-        print(email, password)
+        viewModel.authUser(email: email, password: password)
     }
     
     

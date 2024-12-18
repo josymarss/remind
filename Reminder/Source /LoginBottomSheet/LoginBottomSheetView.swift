@@ -49,7 +49,7 @@ class LoginBottomSheetView: UIView {
         button.backgroundColor = Colors.primaryBlueBase
         button.layer.cornerRadius = Metrics.tiny
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(LoginBottomSheetView.self, action: #selector(didTapLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         return button
     }()
     
@@ -100,8 +100,8 @@ class LoginBottomSheetView: UIView {
         ])
     }
     
-    @objc
-    func didTapLogin() {
+    
+    @objc func didTapLogin() {
         guard let _ = self.emailTextField.text else {
             return
         }
