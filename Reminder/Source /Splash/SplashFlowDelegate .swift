@@ -10,4 +10,5 @@ import Foundation
 
 protocol SplashFlowDelegate: AnyObject {
     func openBottomSheet()
+    func navigateToHome()
 }

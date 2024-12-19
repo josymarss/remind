@@ -16,9 +16,18 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scaleLogo()
         setGestureHandler()
         // Do any additional setup after loading the view.
         setUp()
+    }
+    
+    private func decideFlowNavigation() {
+        if let user = UserDefaultsManager.loadUser(), user.saved {
+            flowDelegate?.navigateToHome()
+        }else {
+            showLoginSheet()
+        }
     }
     
     private func setUp() {
@@ -33,6 +42,7 @@ class SplashViewController: UIViewController {
     }
         
     @objc private func showLoginSheet() {
+        logoUp()
         self.flowDelegate?.openBottomSheet()
     }
     
@@ -48,4 +58,21 @@ class SplashViewController: UIViewController {
         ])
     }
 
+}
+
+// MARK: Animations
+extension SplashViewController {
+    func scaleLogo() {
+        UIView.animate(withDuration: 1.5, delay: 0.0, animations: {
+            self.contentView.logoView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }, completion: {_ in
+            self.decideFlowNavigation()
+        })
+    }
+    
+    func logoUp() {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseOut], animations:{
+            self.contentView.logoView.transform = self.contentView.logoView.transform.translatedBy(x: 0, y: -150)
+        })
+    }
 }
