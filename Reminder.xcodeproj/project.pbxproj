@@ -38,6 +38,8 @@
 		3C9006142D13AC750012FC19 /* SplashFlowDelegate .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006132D13AC750012FC19 /* SplashFlowDelegate .swift */; };
 		3C9006182D13C1050012FC19 /* ViewControllersFactoryProtocol .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006172D13C1050012FC19 /* ViewControllersFactoryProtocol .swift */; };
 		3C90061A2D13C2140012FC19 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */; };
+		3C9006202D13D2400012FC19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90061F2D13D2400012FC19 /* User.swift */; };
+		3C9006222D13D24F0012FC19 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006212D13D24F0012FC19 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		3C9006132D13AC750012FC19 /* SplashFlowDelegate .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashFlowDelegate .swift"; sourceTree = "<group>"; };
 		3C9006172D13C1050012FC19 /* ViewControllersFactoryProtocol .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllersFactoryProtocol .swift"; sourceTree = "<group>"; };
 		3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		3C90061F2D13D2400012FC19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3C9006212D13D24F0012FC19 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 		3C8C01552D1268D40000086E /* Source  */ = {
 			isa = PBXGroup;
 			children = (
+				3C90061E2D13D2300012FC19 /* Model  */,
+				3C90061D2D13D2290012FC19 /* UserDefaults */,
 				3C9006152D13C0B40012FC19 /* DependencyInjection */,
 				3C8C01652D126A9B0000086E /* Constants */,
 				3C8C01602D126A2E0000086E /* LoginBottomSheet */,
@@ -216,6 +222,22 @@
 				3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */,
 			);
 			path = ViewControllersFactory;
+			sourceTree = "<group>";
+		};
+		3C90061D2D13D2290012FC19 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				3C9006212D13D24F0012FC19 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		3C90061E2D13D2300012FC19 /* Model  */ = {
+			isa = PBXGroup;
+			children = (
+				3C90061F2D13D2400012FC19 /* User.swift */,
+			);
+			path = "Model ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,10 +338,12 @@
 				3C8C016C2D126B010000086E /* Metricks.swift in Sources */,
 				3C8C01702D126BB90000086E /* LoginBottomSheetProtocol.swift in Sources */,
 				3C8C015B2D1269420000086E /* SplashViewController.swift in Sources */,
+				3C9006222D13D24F0012FC19 /* UserDefaultsManager.swift in Sources */,
 				3C8C01622D126A4F0000086E /* LoginBottomSheetViewController.swift in Sources */,
 				3C3427FE2D0D4D950047C43C /* AppDelegate.swift in Sources */,
 				3C8C01932D1284940000086E /* ReminderFlowController.swift in Sources */,
 				3C9006182D13C1050012FC19 /* ViewControllersFactoryProtocol .swift in Sources */,
+				3C9006202D13D2400012FC19 /* User.swift in Sources */,
 				3C8C016E2D126B230000086E /* Typography.swift in Sources */,
 				3C3428002D0D4D950047C43C /* SceneDelegate.swift in Sources */,
 				3C9006142D13AC750012FC19 /* SplashFlowDelegate .swift in Sources */,
