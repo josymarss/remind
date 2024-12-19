@@ -2,6 +2,7 @@ import Foundation
 import Firebase
 
 class LoginViewModel {
+    var result: (() -> Void)?
     
     func authUser(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
@@ -9,6 +10,8 @@ class LoginViewModel {
             if let error = error {
                 print("\(error.localizedDescription)")
                 return
+            }else {
+                self.result!()
             }
         }
     }

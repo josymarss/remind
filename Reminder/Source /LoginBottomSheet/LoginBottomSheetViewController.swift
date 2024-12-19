@@ -13,6 +13,17 @@ class LoginBottomSheetCongtroller: UIViewController {
     let loginBottomSweetView = LoginBottomSheetView()
     var hanldeAreaHeight: CGFloat = 50.0
     
+    var flowDelegate: LoginBottomSheetFlowDelegate
+    
+    public init(flowDelegate: LoginBottomSheetFlowDelegate){
+        self.flowDelegate = flowDelegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +31,7 @@ class LoginBottomSheetCongtroller: UIViewController {
         setUp()
         setUpGestureHandler()
         panGestureHandler()
-        
+        bindView()
         // Delegate
         loginBottomSweetView.delegate = self
     }
@@ -32,6 +43,13 @@ class LoginBottomSheetCongtroller: UIViewController {
         setConstraints()
     }
     
+    
+    private func bindView() {
+        viewModel.result = { [weak self] in
+            // Go to home page
+            self?.flowDelegate.navigateHome()
+        }
+    }
     private func setUpGestureHandler() {
         
     }

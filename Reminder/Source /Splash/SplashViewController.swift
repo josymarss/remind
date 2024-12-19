@@ -9,7 +9,17 @@ import UIKit
 
 class SplashViewController: UIViewController {
     let contentView = SplashView()
-
+    public weak var flowDelegate: SplashFlowDelegate?
+    
+    public init(flowDelegate: SplashFlowDelegate) {
+        self.flowDelegate = flowDelegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGestureHandler()
@@ -29,12 +39,7 @@ class SplashViewController: UIViewController {
     }
         
     @objc private func showLoginSheet() {
-        let loginSheetView = LoginBottomSheetCongtroller()
-        loginSheetView.modalPresentationStyle = .overCurrentContext
-        loginSheetView.modalTransitionStyle = .crossDissolve
-        self.present(loginSheetView, animated: false){
-            loginSheetView.animateShow()
-        }
+        self.flowDelegate?.openBottomSheet()
     }
     
     private func addConstraints() {

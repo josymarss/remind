@@ -33,6 +33,9 @@
 		3C8C018B2D1273530000086E /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8C018A2D1273530000086E /* FirebaseDynamicLinks */; };
 		3C8C01912D127A870000086E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C8C01902D127A860000086E /* GoogleService-Info.plist */; };
 		3C8C01932D1284940000086E /* ReminderFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8C01922D1284940000086E /* ReminderFlowController.swift */; };
+		3C9006102D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90060F2D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift */; };
+		3C9006122D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006112D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift */; };
+		3C9006142D13AC750012FC19 /* SplashFlowDelegate .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006132D13AC750012FC19 /* SplashFlowDelegate .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		3C8C01712D126E2F0000086E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3C8C01902D127A860000086E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C8C01922D1284940000086E /* ReminderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFlowController.swift; sourceTree = "<group>"; };
+		3C90060F2D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewFlowDelegate.swift; sourceTree = "<group>"; };
+		3C9006112D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetFlowDelegate.swift; sourceTree = "<group>"; };
+		3C9006132D13AC750012FC19 /* SplashFlowDelegate .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashFlowDelegate .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 			children = (
 				3C8C015A2D1269420000086E /* SplashViewController.swift */,
 				3C8C015C2D12697A0000086E /* SplashView.swift */,
+				3C9006132D13AC750012FC19 /* SplashFlowDelegate .swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				3C8C01712D126E2F0000086E /* LoginViewModel.swift */,
+				3C9006112D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 				3C8C01612D126A4F0000086E /* LoginBottomSheetViewController.swift */,
 				3C8C01632D126A6B0000086E /* LoginBottomSheetView.swift */,
 				3C8C016F2D126BB90000086E /* LoginBottomSheetProtocol.swift */,
+				3C90060F2D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift */,
 			);
 			path = LoginBottomSheet;
 			sourceTree = "<group>";
@@ -279,6 +288,8 @@
 				3C8C015D2D12697A0000086E /* SplashView.swift in Sources */,
 				3C8C01722D126E300000086E /* LoginViewModel.swift in Sources */,
 				3C8C01642D126A6B0000086E /* LoginBottomSheetView.swift in Sources */,
+				3C9006102D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift in Sources */,
+				3C9006122D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift in Sources */,
 				3C8C016C2D126B010000086E /* Metricks.swift in Sources */,
 				3C8C01702D126BB90000086E /* LoginBottomSheetProtocol.swift in Sources */,
 				3C8C015B2D1269420000086E /* SplashViewController.swift in Sources */,
@@ -287,6 +298,7 @@
 				3C8C01932D1284940000086E /* ReminderFlowController.swift in Sources */,
 				3C8C016E2D126B230000086E /* Typography.swift in Sources */,
 				3C3428002D0D4D950047C43C /* SceneDelegate.swift in Sources */,
+				3C9006142D13AC750012FC19 /* SplashFlowDelegate .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
