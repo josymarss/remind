@@ -36,6 +36,8 @@
 		3C9006102D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90060F2D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift */; };
 		3C9006122D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006112D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift */; };
 		3C9006142D13AC750012FC19 /* SplashFlowDelegate .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006132D13AC750012FC19 /* SplashFlowDelegate .swift */; };
+		3C9006182D13C1050012FC19 /* ViewControllersFactoryProtocol .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006172D13C1050012FC19 /* ViewControllersFactoryProtocol .swift */; };
+		3C90061A2D13C2140012FC19 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		3C90060F2D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewFlowDelegate.swift; sourceTree = "<group>"; };
 		3C9006112D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetFlowDelegate.swift; sourceTree = "<group>"; };
 		3C9006132D13AC750012FC19 /* SplashFlowDelegate .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashFlowDelegate .swift"; sourceTree = "<group>"; };
+		3C9006172D13C1050012FC19 /* ViewControllersFactoryProtocol .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllersFactoryProtocol .swift"; sourceTree = "<group>"; };
+		3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		3C8C01552D1268D40000086E /* Source  */ = {
 			isa = PBXGroup;
 			children = (
+				3C9006152D13C0B40012FC19 /* DependencyInjection */,
 				3C8C01652D126A9B0000086E /* Constants */,
 				3C8C01602D126A2E0000086E /* LoginBottomSheet */,
 				3C8C015F2D12698F0000086E /* ViewModel */,
@@ -194,6 +199,23 @@
 				3C8C016D2D126B230000086E /* Typography.swift */,
 			);
 			path = Text;
+			sourceTree = "<group>";
+		};
+		3C9006152D13C0B40012FC19 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				3C9006162D13C0CA0012FC19 /* ViewControllersFactory */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		3C9006162D13C0CA0012FC19 /* ViewControllersFactory */ = {
+			isa = PBXGroup;
+			children = (
+				3C9006172D13C1050012FC19 /* ViewControllersFactoryProtocol .swift */,
+				3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */,
+			);
+			path = ViewControllersFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +308,7 @@
 			files = (
 				3C8C016A2D126AE00000086E /* Colors.constants.swift in Sources */,
 				3C8C015D2D12697A0000086E /* SplashView.swift in Sources */,
+				3C90061A2D13C2140012FC19 /* ViewControllersFactory.swift in Sources */,
 				3C8C01722D126E300000086E /* LoginViewModel.swift in Sources */,
 				3C8C01642D126A6B0000086E /* LoginBottomSheetView.swift in Sources */,
 				3C9006102D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift in Sources */,
@@ -296,6 +319,7 @@
 				3C8C01622D126A4F0000086E /* LoginBottomSheetViewController.swift in Sources */,
 				3C3427FE2D0D4D950047C43C /* AppDelegate.swift in Sources */,
 				3C8C01932D1284940000086E /* ReminderFlowController.swift in Sources */,
+				3C9006182D13C1050012FC19 /* ViewControllersFactoryProtocol .swift in Sources */,
 				3C8C016E2D126B230000086E /* Typography.swift in Sources */,
 				3C3428002D0D4D950047C43C /* SceneDelegate.swift in Sources */,
 				3C9006142D13AC750012FC19 /* SplashFlowDelegate .swift in Sources */,

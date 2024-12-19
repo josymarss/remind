@@ -1,17 +1,11 @@
-//
-//  SplashViewController.swift
-//  Remnder
-//
-//  Created by Josymarss on 14/12/24.
-//
-
 import UIKit
 
 class SplashViewController: UIViewController {
-    let contentView = SplashView()
+    let contentView: SplashView
     public weak var flowDelegate: SplashFlowDelegate?
     
-    public init(flowDelegate: SplashFlowDelegate) {
+    public init(contentView: SplashView, flowDelegate: SplashFlowDelegate) {
+        self.contentView = contentView
         self.flowDelegate = flowDelegate
         super.init(nibName: nil, bundle: nil)
     }
