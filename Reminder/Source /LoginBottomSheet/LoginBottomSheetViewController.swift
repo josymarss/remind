@@ -51,6 +51,19 @@ class LoginBottomSheetController: UIViewController{
 //            self?.flowDelegate.navigateHome()
             self?.presentLoginAlertSave(email: username)
         }
+        
+        viewModel.errorResult = { [weak self] errorMessage in
+            self?.presentAlertError(message: errorMessage)
+        }
+    }
+    
+    private func presentAlertError(message: String) {
+        let alertController = UIAlertController(title: "Erro!", message: message, preferredStyle: .alert)
+        
+        let actionAlert = UIAlertAction(title: "alguma coisa foi mal, verifique internet e tente novamente", style: .default)
+        
+        alertController.addAction(actionAlert)
+        self.present(alertController, animated: true)
     }
     
     private func presentLoginAlertSave(email: String){
