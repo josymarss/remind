@@ -30,4 +30,9 @@ class UserDefaultsManager {
         return nil
     }
     
+    static func logout() {
+        UserDefaults.standard.removeObject(forKey: userKey)
+        UserDefaults.standard.synchronize()
+    }
+    
 }

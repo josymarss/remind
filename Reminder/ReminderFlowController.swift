@@ -9,7 +9,16 @@ import Foundation
 import UIKit
 
 
-class ReminderFlowController {
+class ReminderFlowController: HomeViewFlowDelegate {
+    func didTapImage() {
+        //
+    }
+    
+    func logout() {
+        self.navigationController?.popViewController(animated: true)
+        openBottomSheet()
+    }
+    
     
     private var navigationController: UINavigationController?
     private let viewControllerFactory: ViewControllersFactoryProtocol
@@ -29,8 +38,8 @@ class ReminderFlowController {
 extension ReminderFlowController: LoginBottomSheetFlowDelegate {
     func navigateHome() {
         self.navigationController?.dismiss(animated: false)
-        let homeViewController = UIViewController()
-        homeViewController.view.backgroundColor = .red
+        let homeView = HomeView()
+        let homeViewController = HomeViewController(contentView: homeView, flowDelegate: self)
         
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
@@ -48,10 +57,11 @@ extension ReminderFlowController: SplashFlowDelegate {
         }
     }
     
+    // MARK: HomeView
     func navigateToHome() {
         self.navigationController?.dismiss(animated: false)
-        let homeViewController = UIViewController()
-        homeViewController.view.backgroundColor = .red
+        let homeView = HomeView()
+        let homeViewController = HomeViewController(contentView: homeView, flowDelegate: self)
         
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
