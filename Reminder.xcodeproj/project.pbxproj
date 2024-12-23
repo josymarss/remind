@@ -44,6 +44,8 @@
 		3C90061A2D13C2140012FC19 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */; };
 		3C9006202D13D2400012FC19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90061F2D13D2400012FC19 /* User.swift */; };
 		3C9006222D13D24F0012FC19 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9006212D13D24F0012FC19 /* UserDefaultsManager.swift */; };
+		3CF78E692D18A93600DE4679 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF78E682D18A93600DE4679 /* HomeViewModel.swift */; };
+		3CF78E6D2D18BB2F00DE4679 /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF78E6C2D18BB2F00DE4679 /* ButtonHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		3C9006192D13C2140012FC19 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		3C90061F2D13D2400012FC19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3C9006212D13D24F0012FC19 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		3CF78E682D18A93600DE4679 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3CF78E6C2D18BB2F00DE4679 /* ButtonHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				3C27F6B42D1526A600669317 /* HomeView.swift */,
 				3C27F6B62D1526C100669317 /* HomeViewController.swift */,
 				3C27F6B82D1526DE00669317 /* HomeViewFlowDelegate.swift */,
+				3CF78E682D18A93600DE4679 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 		3C8C01552D1268D40000086E /* Source  */ = {
 			isa = PBXGroup;
 			children = (
+				3CF78E6A2D18BAF900DE4679 /* Components */,
 				3C27F6BA2D15293F00669317 /* Extension */,
 				3C27F6B22D15266A00669317 /* Scenes */,
 				3C90061E2D13D2300012FC19 /* Model  */,
@@ -276,6 +282,22 @@
 			path = "Model ";
 			sourceTree = "<group>";
 		};
+		3CF78E6A2D18BAF900DE4679 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3CF78E6B2D18BB0A00DE4679 /* ButtonHomeView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3CF78E6B2D18BB0A00DE4679 /* ButtonHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				3CF78E6C2D18BB2F00DE4679 /* ButtonHomeView.swift */,
+			);
+			path = ButtonHomeView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +396,7 @@
 				3C9006102D139D630012FC19 /* LoginBottomSheetViewFlowDelegate.swift in Sources */,
 				3C9006122D139E5D0012FC19 /* LoginBottomSheetFlowDelegate.swift in Sources */,
 				3C8C016C2D126B010000086E /* Metricks.swift in Sources */,
+				3CF78E6D2D18BB2F00DE4679 /* ButtonHomeView.swift in Sources */,
 				3C8C01702D126BB90000086E /* LoginBottomSheetProtocol.swift in Sources */,
 				3C8C015B2D1269420000086E /* SplashViewController.swift in Sources */,
 				3C9006222D13D24F0012FC19 /* UserDefaultsManager.swift in Sources */,
@@ -383,6 +406,7 @@
 				3C8C01932D1284940000086E /* ReminderFlowController.swift in Sources */,
 				3C9006182D13C1050012FC19 /* ViewControllersFactoryProtocol .swift in Sources */,
 				3C9006202D13D2400012FC19 /* User.swift in Sources */,
+				3CF78E692D18A93600DE4679 /* HomeViewModel.swift in Sources */,
 				3C27F6BC2D1529A800669317 /* ViewController+Ext.swift in Sources */,
 				3C8C016E2D126B230000086E /* Typography.swift in Sources */,
 				3C3428002D0D4D950047C43C /* SceneDelegate.swift in Sources */,

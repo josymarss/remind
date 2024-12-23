@@ -15,18 +15,12 @@ class HomeView: UIView {
         
         setUp()
         setGestureRecognizer()
+        setUpTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private let profileBackground: UIView = {
-        let view = UIView()
-        view.backgroundColor = Colors.gray600
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     private let contentBackground: UIView = {
         let view = UIView()
@@ -37,9 +31,29 @@ class HomeView: UIView {
         return view
     }()
     
+    private let prescriptionButtomView: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "paper"), title: "Minhas receitas", description: "Acompanhe os medicamentos e gerencie lembretes")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    private let newPrescriptionButtomView: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "pills"), title: "Nova receita", description: "Cadastre novos lembretes e receitas")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    private let profileBackground: UIView = {
+        let view = UIView()
+        view.backgroundColor = Colors.gray600
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let imageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "user")
         image.isUserInteractionEnabled = true
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = Metrics.huge
@@ -58,13 +72,16 @@ class HomeView: UIView {
         return label
     }()
     
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = Colors.gray100
-        label.font = Typography.heading
+    let nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.text = "Test"
+        textField.returnKeyType = .done
+        textField.placeholder = "Insira seu nome"
+        textField.textColor = Colors.gray100
+        textField.font = Typography.heading
         
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     private let feedBackButton: UIButton = {
@@ -78,14 +95,15 @@ class HomeView: UIView {
     }()
     
     private func setUp(){
-        self.backgroundColor = Colors.gray600
         self.addSubview(profileBackground)
         profileBackground.addSubview(imageView)
         profileBackground.addSubview(welcomeLabel)
-        profileBackground.addSubview(nameLabel)
+        profileBackground.addSubview(nameTextField)
         
         self.addSubview(contentBackground)
         contentBackground.addSubview(feedBackButton)
+        contentBackground.addSubview(prescriptionButtomView)
+        contentBackground.addSubview(newPrescriptionButtomView)
         
         setUpConstraints()
     }
@@ -105,8 +123,8 @@ class HomeView: UIView {
             welcomeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Metrics.small),
             welcomeLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
             
-            nameLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: Metrics.little),
-            nameLabel.leadingAnchor.constraint(equalTo: welcomeLabel.leadingAnchor),
+            nameTextField.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: Metrics.little),
+            nameTextField.leadingAnchor.constraint(equalTo: welcomeLabel.leadingAnchor),
             
             
             contentBackground.topAnchor.constraint(equalTo: profileBackground.bottomAnchor, constant: Metrics.medium),
@@ -117,7 +135,26 @@ class HomeView: UIView {
             feedBackButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
             feedBackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
             feedBackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
-            feedBackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.huge)
+            feedBackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.huge),
+            
+            prescriptionButtomView.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.huge),
+            prescriptionButtomView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
+            prescriptionButtomView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medium),
+            prescriptionButtomView.heightAnchor.constraint(equalToConstant: 112),
+            
+            newPrescriptionButtomView.topAnchor.constraint(equalTo: prescriptionButtomView.bottomAnchor, constant: Metrics.medium),
+            newPrescriptionButtomView.leadingAnchor.constraint(equalTo: prescriptionButtomView.leadingAnchor),
+            newPrescriptionButtomView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medium),
+            newPrescriptionButtomView.heightAnchor.constraint(equalTo: prescriptionButtomView.heightAnchor)
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
         ])
     }
@@ -128,7 +165,26 @@ class HomeView: UIView {
         imageView.addGestureRecognizer(gestureRecognizer)
     }
     
+    private func setUpTextField() {
+        nameTextField.addTarget(self, action: #selector(nameTextFIledDidEndEditing), for: .editingDidEnd)
+        nameTextField.delegate = self
+    }
+    
     @objc func didTapImage() {
         delegate?.didTapImage()
+    }
+    
+    @objc
+    func nameTextFIledDidEndEditing() {
+        
+    }
+}
+
+extension HomeView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        let userName = nameTextField.text ?? ""
+        UserDefaultsManager.saveUserName(name: userName)
+        return true
     }
 }

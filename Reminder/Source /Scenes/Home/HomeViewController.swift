@@ -10,18 +10,20 @@ import UIKit
 class HomeViewController: UIViewController {
     var flowDelegate: HomeViewFlowDelegate
     var contentView: HomeView
+    var viewModel: HomeViewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUp()
         setUpNavigationBar()
+        checkForExistentUser()
     }
     
     init(contentView:HomeView, flowDelegate: HomeViewFlowDelegate) {
         self.contentView = contentView
         self.flowDelegate = flowDelegate
-        
+        self.viewModel = HomeViewModel()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -50,11 +52,20 @@ class HomeViewController: UIViewController {
         self.setUpConstraintsViewController(contentView: contentView)
     }
     
-    @objc 
+    private func checkForExistentUser(){
+        if let _ = UserDefaultsManager.loadUser(),UserDefaultsManager.loadProfileImage() != nil {
+            contentView.nameTextField.text = UserDefaultsManager.loadUserName()
+            
+            let imageData = UserDefaultsManager.loadProfileImage()
+            contentView.imageView.image = imageData
+        }
+    }
+    @objc
     private func logOut(){
-        UserDefaultsManager.logout()
+        UserDefaultsManager.removeUser()
         flowDelegate.logout()
     }
+    
 
 }
 
@@ -81,8 +92,10 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[.editedImage] as? UIImage{
             contentView.imageView.image = editedImage
+            UserDefaultsManager.saveProfileImage(from: editedImage)
         } else if let originalImage = info[.originalImage] {
             contentView.imageView.image = originalImage as? UIImage
+            UserDefaultsManager.saveProfileImage(from: originalImage as! UIImage)
         }
         dismiss(animated: true)
     }
